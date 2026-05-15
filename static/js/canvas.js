@@ -5,7 +5,7 @@ let width, height, dpr;
 let particles = [];
 
 // Configurations
-const PARTICLE_COUNT = 200;
+const PARTICLE_COUNT = window.innerWidth < 768 ? 50 : 120;
 const MAX_VELOCITY = 3.0;
 const FRICTION = 0.95;
 const RETURN_SPEED = 0.002;
@@ -13,7 +13,7 @@ const GRAVITY_RADIUS = 280;
 const CONNECTION_DISTANCE = 140;
 
 function resize() {
-    dpr = window.devicePixelRatio || 1;
+    dpr = Math.min(window.devicePixelRatio || 1, 2); // Limit dpr for mobile performance
     width = window.innerWidth;
 
     // Set height to full document height so it covers the scrollable area
