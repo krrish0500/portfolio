@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krrisssh | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Canvas for background animation -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="icon" style="color: #4285F4;">▲</span>
+            <span class="text">Krrish <span style="font-weight: 300; color: #94a3b8;">Portfolio</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <main class="hero fade-in">
+        <div class="hero-content two-column">
+            <!-- Left Column: Photo -->
+            <div class="hero-photo-wrapper">
+                <div class="glow-ring"></div>
+                <!-- Important: place your 'profile.jpg' in the 'static' folder -->
+                <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Krrisssh" class="profile-photo" onerror="this.src='https://ui-avatars.com/api/?name=Krrisssh&size=300&background=4285F4&color=fff&rounded=true'">
+            </div>
+            
+            <!-- Right Column: Text -->
+            <div class="hero-text">
+                <div class="badge">
+                    <span class="icon" style="color: #4285F4;">▲</span> Krrish Portfolio
+                </div>
+                <h1 class="hero-title">Krrish</h1>
+                <h2 class="hero-subtitle">Krrish Vijay Pajgade</h2>
+                <p class="hero-tagline">Full Stack Developer | Building next-gen digital experiences</p>
+                <div class="hero-buttons">
+                    <a href="https://drive.google.com/file/d/1V3iDTVkxDvpjZkhcgh7PXxp6nj12zS3f/view?usp=share_link" target="_blank" class="btn btn-solid">Download Resume</a>
+                    <a href="#projects" class="btn btn-outline">Explore Projects</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/krrish0500" class="social-link" title="GitHub" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/krrish-pajgade-a20607290/" class="social-link" title="LinkedIn" target="_blank">IN</a>
+                    <a href="https://x.com/KrrishPajgade" class="social-link" title="Twitter/X" target="_blank">X</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content glass-card" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 2.5rem; line-height: 1.8; color: #e2e8f0; font-size: 1.1rem;">
+            <p>I’m a Computer Science Engineering student currently learning Python Full Stack Development with a strong interest in modern web applications, AI tools, and interactive user experiences. I enjoy building clean and visually engaging interfaces while continuously improving my backend and problem-solving skills.</p>
+            <p style="margin-top: 1.5rem; color: #94a3b8; font-size: 1.2rem;"><em>"Focused on building fast, modern, and user-centric digital experiences with a blend of creativity and technology."</em></p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto;">
+            
+            <div class="edu-card glass-card">
+                <div style="font-size: 2rem; margin-bottom: 1rem;">🎓</div>
+                <h3 style="color: #60a5fa; margin-bottom: 0.5rem;">B.Tech - Computer Science & Engineering</h3>
+                <p style="font-weight: 500; margin-bottom: 0.5rem;">Prof. Ram Meghe Institute of Technology & Research</p>
+                <div style="display: flex; justify-content: space-between; color: #94a3b8; font-size: 0.9rem;">
+                    <span>2023 – 2027</span>
+                    <span>CGPA: 7.92 (5th Sem)</span>
+                </div>
+            </div>
+
+            <div class="edu-card glass-card">
+                <div style="font-size: 2rem; margin-bottom: 1rem;">🏫</div>
+                <h3 style="color: #60a5fa; margin-bottom: 0.5rem;">HSC (12th)</h3>
+                <p style="font-weight: 500; margin-bottom: 0.5rem;">Jagadambha Junior College, Yavatmal</p>
+                <div style="display: flex; justify-content: space-between; color: #94a3b8; font-size: 0.9rem;">
+                    <span>2021 – 2023</span>
+                    <span>Score: 80.83%</span>
+                </div>
+            </div>
+
+            <div class="edu-card glass-card">
+                <div style="font-size: 2rem; margin-bottom: 1rem;">🎒</div>
+                <h3 style="color: #60a5fa; margin-bottom: 0.5rem;">SSC (10th)</h3>
+                <p style="font-weight: 500; margin-bottom: 0.5rem;">GIANTS High School, Yavatmal</p>
+                <div style="display: flex; justify-content: space-between; color: #94a3b8; font-size: 0.9rem;">
+                    <span>Till 2021</span>
+                    <span>Score: 93.2%</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- What I Build Section -->
+    <section id="what-i-build" class="section floating-cards-section">
+        <h2 class="section-title">What I Build</h2>
+        <div class="floating-cards-container">
+            <div class="float-card editor-card">
+                <div class="card-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="card-body">
+                    <pre><code>def build_ai_agent(data):
+    model = NeuralNet()
+    return model.train(data)</code></pre>
+                </div>
+                <p class="card-label">Code Editor</p>
+            </div>
+            
+            <div class="float-card browser-card">
+                <div class="card-header">
+                    <div class="url-bar">https://krrish.dev</div>
+                </div>
+                <div class="card-body">
+                    <div class="wireframe-block"></div>
+                    <div class="wireframe-line"></div>
+                    <div class="wireframe-line short"></div>
+                </div>
+                <p class="card-label">Browser</p>
+            </div>
+            
+            <div class="float-card terminal-card">
+                <div class="card-body terminal">
+                    <p><span>$</span> python app.py</p>
+                    <p class="success" style="color: #60a5fa;">* Running on http://127.0.0.1:5000/</p>
+                </div>
+                <p class="card-label">Terminal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="card-grid">
+            <div class="card glass-card">
+                <h3>AI Agent Assistant</h3>
+                <p>A next-gen AI agent platform built with Python and React.</p>
+                <a href="#" class="btn btn-outline small-btn">View Code</a>
+            </div>
+            <div class="card glass-card">
+                <h3>Portfolio Website</h3>
+                <p>A sleek, interactive portfolio featuring a custom antigravity canvas animation.</p>
+                <a href="#" class="btn btn-outline small-btn">View Code</a>
+            </div>
+            <div class="card glass-card">
+                <h3>Data Pipeline</h3>
+                <p>High-throughput data processing pipeline built on AWS.</p>
+                <a href="#" class="btn btn-outline small-btn">View Code</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <h2 class="section-title">Skills & Interests</h2>
+        <div class="skills-grid">
+            <!-- Programming & Web -->
+            <div class="skill-category glass-card">
+                <h3>Programming & Web</h3>
+                <div class="tags-container">
+                    <span class="skill-tag">Core Python (In Progress)</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                </div>
+            </div>
+
+            <!-- Database & Backend -->
+            <div class="skill-category glass-card">
+                <h3>Database & Backend</h3>
+                <div class="tags-container">
+                    <span class="skill-tag">SQL (Basic)</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">Supabase</span>
+                </div>
+            </div>
+
+            <!-- Tools & Platforms -->
+            <div class="skill-category glass-card">
+                <h3>Tools & Platforms</h3>
+                <div class="tags-container">
+                    <span class="skill-tag">WordPress</span>
+                    <span class="skill-tag">Git / GitHub</span>
+                    <span class="skill-tag">PyCharm</span>
+                </div>
+            </div>
+
+            <!-- AI Tools -->
+            <div class="skill-category glass-card">
+                <h3>AI Tools</h3>
+                <p class="category-desc">Proficient in using AI tools for productivity, coding, and content generation.</p>
+                <div class="tags-container">
+                    <span class="skill-tag">Claude-code</span>
+                    <span class="skill-tag">Lovable</span>
+                    <span class="skill-tag">Cursor</span>
+                    <span class="skill-tag">Antigravity</span>
+                </div>
+            </div>
+
+            <!-- Other Interests -->
+            <div class="skill-category glass-card">
+                <h3>Other Interests</h3>
+                <div class="tags-container">
+                    <span class="skill-tag">Content Creation</span>
+                    <span class="skill-tag">Video Editing (Trioclust)</span>
+                    <span class="skill-tag">Social Media Handling</span>
+                    <span class="skill-tag">Canva (Graphics)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section certifications-section">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card glass-card">
+                <div class="cert-icon">🤖</div>
+                <h3>Artificial Intelligence</h3>
+                <p class="cert-issuer">Techfest, IIT Bombay & GUVI-HCL</p>
+                <p class="cert-date">Dec 2024</p>
+                <a href="{{ url_for('static', filename='certificates/ai_iitb.png') }}" class="cert-link" target="_blank">View Certificate →</a>
+            </div>
+            <div class="cert-card glass-card">
+                <div class="cert-icon">🐍</div>
+                <h3>Python 3.4.3</h3>
+                <p class="cert-issuer">IIT Bombay (SINE) | Score: 79%</p>
+                <p class="cert-date">Oct 2025</p>
+                <a href="{{ url_for('static', filename='certificates/python.png') }}" class="cert-link" target="_blank">View Certificate →</a>
+            </div>
+            <div class="cert-card glass-card">
+                <div class="cert-icon">☕</div>
+                <h3>Java</h3>
+                <p class="cert-issuer">Spoken Tutorial, IIT Bombay | Score: 90%</p>
+                <p class="cert-date">Oct 2024</p>
+                <a href="{{ url_for('static', filename='certificates/java.png') }}" class="cert-link" target="_blank">View Certificate →</a>
+            </div>
+            <div class="cert-card glass-card">
+                <div class="cert-icon">🛡️</div>
+                <h3>Intro to Cybersecurity</h3>
+                <p class="cert-issuer">Cisco Networking Academy</p>
+                <p class="cert-date">Dec 2024</p>
+                <a href="{{ url_for('static', filename='certificates/cybersecurity.png') }}" class="cert-link" target="_blank">View Certificate →</a>
+            </div>
+            <div class="cert-card glass-card">
+                <div class="cert-icon">⚡</div>
+                <h3>JavaScript Essentials 1</h3>
+                <p class="cert-issuer">Cisco Networking Academy & OpenEDG</p>
+                <p class="cert-date">Oct 2024</p>
+                <a href="{{ url_for('static', filename='certificates/javascript.png') }}" class="cert-link" target="_blank">View Certificate →</a>
+            </div>
+            <div class="cert-card glass-card">
+                <div class="cert-icon">🏆</div>
+                <h3>Hackathon - 5th Runner Up</h3>
+                <p class="cert-issuer">KDK College of Engineering, Nagpur</p>
+                <p class="cert-date">Participant</p>
+                <a href="{{ url_for('static', filename='certificates/hackathon.jpg') }}" class="cert-link" target="_blank">View Certificate →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="contact-text">Interested in working together or have a question? Feel free to reach out.</p>
+        <a href="mailto:pajgadekrishna@gmail.com" class="btn btn-primary">pajgadekrishna@gmail.com</a>
+    </section>
+
+    <!-- Local JS -->
+    <script src="{{ url_for('static', filename='js/canvas.js') }}"></script>
+    <script>
+        // Floating Cards Proximity Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.float-card');
+            
+            cards.forEach((card, index) => {
+                card.addEventListener('mouseenter', () => {
+                    // Push neighbors away
+                    cards.forEach((otherCard, otherIndex) => {
+                        if (index !== otherIndex) {
+                            if (otherIndex < index) {
+                                otherCard.classList.add('pushed-left');
+                            } else {
+                                otherCard.classList.add('pushed-right');
+                            }
+                        }
+                    });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    // Reset neighbors
+                    cards.forEach(otherCard => {
+                        otherCard.classList.remove('pushed-left', 'pushed-right');
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
